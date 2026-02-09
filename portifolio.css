@@ -1,0 +1,81 @@
+/* Reset Básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Heebo', sans-serif; color: #21243D; }
+
+/* 3.1 CSS Grid Layout - Estrutura Principal */
+main {
+    display: grid;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Hero Section (Mobile: Avatar em cima, Texto embaixo) */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+}
+.hero-image img {
+    width: 170px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 0px #EDF7FA;
+}
+
+/* Posts Recentes */
+.recent-posts { background-color: #EDF7FA; padding: 20px; }
+.posts-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 coluna */
+    gap: 20px;
+}
+
+/* Trabalhos em Destaque */
+.work-item {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: stack */
+    gap: 15px;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 30px;
+}
+
+/* 3.2 Design Responsivo (Desktop) */
+@media (min-width: 1024px) {
+    main {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* Hero: Inverte a ordem no Desktop */
+    .hero-section {
+        grid-template-columns: 2fr 1fr;
+        text-align: left;
+        align-items: center;
+        margin-top: 100px;
+    }
+    .hero-content { grid-column: 1; grid-row: 1; }
+    .hero-image { grid-column: 2; grid-row: 1; }
+
+    /* Posts: 2 colunas */
+    .posts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Trabalhos: Imagem à esquerda, texto à direita */
+    .work-item {
+        grid-template-columns: 246px 1fr;
+    }
+}
+
+/* Estilo do Botão */
+.btn-resume {
+    background-color: #FF6464;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.btn-resume:hover { background-color: #e55a5a; }
