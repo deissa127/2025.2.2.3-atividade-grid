@@ -1,81 +1,297 @@
-/* Reset Básico */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Heebo', sans-serif; color: #21243D; }
-
-/* 3.1 CSS Grid Layout - Estrutura Principal */
-main {
-    display: grid;
-    gap: 40px;
-    padding: 20px;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Hero Section (Mobile: Avatar em cima, Texto embaixo) */
-.hero-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 20px;
+html {
+    scroll-behavior: smooth;
 }
-.hero-image img {
-    width: 170px;
+
+body {
+    font-family: 'Heebo', sans-serif;
+    color: #21243D;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* UTILITÁRIOS */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* HEADER / NAV */
+.header {
+    padding: 32px 0;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+
+#menu-check,
+.menu-button {
+    display: none;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.hero__content {
+    max-width: 520px;
+}
+
+.hero__title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.hero__text {
+    color: #6C6C6C;
+    margin-bottom: 32px;
+}
+
+.btn-primary {
+    background-color: #FF6464;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.hero__image img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
     border-radius: 50%;
-    box-shadow: 10px 10px 0px #EDF7FA;
 }
 
-/* Posts Recentes */
-.recent-posts { background-color: #EDF7FA; padding: 20px; }
+/* RECENT POSTS */
+.recent-posts {
+    background-color: #EDF7FA;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.view-all {
+    color: #00A8CC;
+    font-size: 14px;
+    text-decoration: none;
+}
+
 .posts-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile: 1 coluna */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
 
-/* Trabalhos em Destaque */
-.work-item {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile: stack */
-    gap: 15px;
-    border-bottom: 1px solid #E0E0E0;
-    padding-bottom: 30px;
+.post-card {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 4px;
 }
 
-/* 3.2 Design Responsivo (Desktop) */
-@media (min-width: 1024px) {
-    main {
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    /* Hero: Inverte a ordem no Desktop */
-    .hero-section {
-        grid-template-columns: 2fr 1fr;
-        text-align: left;
-        align-items: center;
-        margin-top: 100px;
-    }
-    .hero-content { grid-column: 1; grid-row: 1; }
-    .hero-image { grid-column: 2; grid-row: 1; }
-
-    /* Posts: 2 colunas */
-    .posts-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    /* Trabalhos: Imagem à esquerda, texto à direita */
-    .work-item {
-        grid-template-columns: 246px 1fr;
-    }
-}
-
-/* Estilo do Botão */
-.btn-resume {
-    background-color: #FF6464;
-    color: white;
-    border: none;
-    padding: 12px 25px;
+.post-card__title {
     font-size: 20px;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: 0.3s;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
-.btn-resume:hover { background-color: #e55a5a; }
+
+.post-card__meta {
+    font-size: 14px;
+    color: #6C6C6C;
+    margin-bottom: 12px;
+}
+
+.post-card__meta span {
+    margin: 0 8px;
+}
+
+.post-card__text {
+    font-size: 14px;
+}
+
+/* SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.skill-item {
+    background: #fff;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.skill-item i {
+    font-size: 28px;
+    color: #00A8CC;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* FEATURED WORKS */
+.works-container {
+    margin-top: 40px;
+}
+
+.work-card {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.work-card__img img {
+    width: 260px;
+    border-radius: 6px;
+}
+
+.work-card__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.work-card__tags {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tag-year {
+    background-color: #142850;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px 12px;
+    border-radius: 16px;
+    font-weight: 700;
+}
+
+.tag-category {
+    color: #8695A4;
+    font-size: 14px;
+}
+
+.work-card__text {
+    font-size: 14px;
+}
+
+/* INTERESTS */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.interest-card {
+    background-color: #EDF7FA;
+    padding: 24px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* FOOTER */
+.footer {
+    padding: 48px 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 24px;
+}
+
+.social-links a {
+    font-size: 24px;
+    color: #21243D;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #6C6C6C;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card {
+        flex-direction: column;
+    }
+
+    .work-card__img img {
+        width: 100%;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}

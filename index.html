@@ -3,89 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio | Creative Technologist</title>
-
+    <title>Portfólio | Hadassa, aluna de TADS</title>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="css/portifolio.css">
+    <link rel="stylesheet" href="portifolio.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <nav>
-            <ul class="nav-links">
+    <header class="header">
+        <nav class="nav-container">
+            <input type="checkbox" id="menu-check">
+            <label for="menu-check" class="menu-button">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav-menu">
                 <li><a href="#works">Works</a></li>
                 <li><a href="#blog">Blog</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="menu-icon"><i class="fas fa-bars"></i></div>
         </nav>
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Hi, I am John,<br>Creative Technologist</h1>
-                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
-                <button class="btn-resume">Download Resume</button>
+        <section class="hero section-padding">
+            <div class="hero__content">
+                <h1 class="hero__title">Olá meu nome é Hadassa,<br>Aluna de TADS</h1>
+                <p class="hero__text">Meu nome é Hadassa Medeiros, tenho 21 anos e estou no primeiro período de TADS. Essa não é a minha primira graduação, sou graduada pela Universidade Potiguar em Pedagogia.</p>
+                <button class="btn-primary">Download Resume</button>
             </div>
-            <div class="hero-image">
-                <img src="images/avatar.png" alt="Foto de John">
-            </div>
-        </section>
-
-        <section class="recent-posts" id="blog">
-            <div class="section-header">
-                <h3>Recent posts</h3>
-                <a href="#" class="view-all">View all</a>
-            </div>
-            <div class="posts-grid">
-                <article class="post-card">
-                    <h2>Making a design system from scratch</h2>
-                    <p class="post-meta">12 Feb 2020 <span>|</span> Design, Pattern</p>
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
-                </article>
-                <article class="post-card">
-                    <h2>Creating pixel perfect icons in Figma</h2>
-                    <p class="post-meta">12 Feb 2020 <span>|</span> Figma, Icon Design</p>
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
-                </article>
+            <div class="hero__image">
+                <img src="IMG_20250816_203905_168 (1).jpg" alt="hadassa">
             </div>
         </section>
 
-        <section class="featured-works" id="works">
-            <h3>Featured works</h3>
-            <div class="works-list">
-                <div class="work-item">
-                    <img src="images/work1.png" alt="Dashboard">
-                    <div class="work-info">
-                        <h2>Designing Dashboards</h2>
-                        <span class="year-tag">2020</span> <span class="category">Dashboard</span>
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+        <section class="recent-posts section-padding" id="blog">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="section-title">Recent posts</h3>
+                    <a href="#" class="view-all">View all</a>
+                </div>
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <h2 class="post-card__title">Atividade de HTML e CSS no Github</h2>
+                        <div class="post-card__meta">12 Feb 2020 <span>|</span>Web Design</div>
+                        <p class="post-card__text">Atividades práticas do uso de HTML e CSS.</p>
+                    </article>
+                    <article class="post-card">
+                        <h2 class="post-card__title">Atividades de Sistemas Digitais</h2>
+                        <div class="post-card__meta">12 Feb 2020 <span>|</span>Sistemas Digitais</div>
+                        <p class="post-card__text">Projeto da disciplina de Sistemas Digitais no logisim.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section-padding" id="skills">
+            <div class="container">
+                <h3 class="section-title">Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                    <div class="skill-item"><i class="fab fa-css3-alt"></i><span>CSS Grid</span></div>
+                    <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                    <div class="skill-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+                    <div class="skill-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                    <div class="skill-item"><i class="fab fa-react"></i><span>React</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-works section-padding" id="works">
+            <div class="container">
+                <h3 class="section-title">Featured works</h3>
+                <div class="works-container">
+                    <div class="work-card">
+                        <div class="work-card__img">
+                            <img src="Se levanta el viento☀️.jpg" alt="Dashboard Project">
+                        </div>
+                        <div class="work-card__content">
+                            <h2 class="work-card__title">Designing Dashboards</h2>
+                            <div class="work-card__tags">
+                                <span class="tag-year">2020</span>
+                                <span class="tag-category">Dashboard</span>
+                            </div>
+                            <p class="work-card__text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                        </div>
+                    </div>
+                    <div class="work-card">
+                        <div class="work-card__img">
+                            <img src="bruxa.jpg" alt="Portrait Project">
+                        </div>
+                        <div class="work-card__content">
+                            <h2 class="work-card__title">Vibrant Portraits of 2020</h2>
+                            <div class="work-card__tags">
+                                <span class="tag-year">2018</span>
+                                <span class="tag-category">Illustration</span>
+                            </div>
+                            <p class="work-card__text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                        </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </section>
 
-        <section class="skills">
-            <h3>Skills</h3>
-            <div class="skills-grid">
-                <div class="skill-card"><i class="fab fa-html5"></i> HTML5</div>
-                <div class="skill-card"><i class="fab fa-css3-alt"></i> CSS Grid</div>
-                <div class="skill-card"><i class="fab fa-js"></i> JavaScript</div>
+        <section class="interests section-padding">
+            <div class="container">
+                <h3 class="section-title">Sobre Mim & Interesses</h3>
+                <div class="interests-grid">
+                    <div class="interest-card">🎮 Games</div>
+                    <div class="interest-card">📸 Fotografia</div>
+                    <div class="interest-card">🚴‍♂️ Ciclismo</div>
+                    <div class="interest-card">🎸 Música</div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer id="contact">
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+    <footer class="footer" id="contact">
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
-        <p>Copyright ©2026 All rights reserved</p>
+        <p class="copyright">Copyright ©2026 All rights reserved</p>
     </footer>
 
 </body>
